@@ -1,13 +1,13 @@
 @extends('admin/layout.master')
 
-@section('title','masyarakat')
+@section('title','mahasiswa')
 @section('title2','tambah')
 @section('masyarakat','active')
 @section('konten')
 
 <div class="card">
   <div class="card-header">
-    <h4>Edit masyarakat</h4>
+    <h4>Edit Mahasiswa</h4>
   </div>
   <div class="card-body">
     <form action="{{ route('masyarakat.update',$data->nik) }}" method="POST">
@@ -19,7 +19,7 @@
         <div class="col-md-6">
             <div class="form-group">
               <label @error('nik') class="text-danger" @enderror>
-                nik
+                nim
                 @error('nik')
                   | {{ $message }}
                 @enderror

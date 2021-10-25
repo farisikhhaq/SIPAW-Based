@@ -1,6 +1,6 @@
 @extends('admin/layout.master')
 
-@section('title','Masyarakat')
+@section('title','Mahasiswa')
 @section('title2','index')
 @section('masyarakat','active')
 
@@ -10,7 +10,6 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-
                     {{-- Button tambah --}}
                     <a href="{{ route('masyarakat.create') }}" class="btn btn-warning mb-4"><i class="fas fa-plus text-light"></i></a>
                     
@@ -25,7 +24,6 @@
                           </div>
                         </form>
                     </div>
-
                     {{-- Alert --}}
                     @if(session('message'))
                     <div class="alert alert-success alert-dismissible show fade">
