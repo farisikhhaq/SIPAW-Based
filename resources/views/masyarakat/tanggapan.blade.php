@@ -17,7 +17,7 @@
   
             <div class="row">
               <div class="col-md-6">
-                <h5 class="text-warning">Tanggapan dari pengaduan anda</h5><hr width="100" class="text-right" style="height: 2px; color: blue;">
+                <h5 class="text-warning" style="padding-top : 20px;">Tanggapan dari pengaduan anda</h5><hr width="100" class="text-right" style="height: 2px; color: blue;">
                 <br>
                 @if ($data != '')
                 <div class="card shadow" id="card-cart">
