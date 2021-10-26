@@ -41,7 +41,7 @@
     <span><b> Jumlah pengaduan yang sedang diproses</b> : {{ $proses }}</span>
     <br><hr>
     <br>
-    <span><b> Jumlah masyarakat</b> : {{ $masyarakat }}</span>
+    <span><b> Jumlah Mahasiswa</b> : {{ $masyarakat }}</span>
     <br><br>
     <span><b> Jumlah petugas</b> : {{ $petugas }}</span>
     
