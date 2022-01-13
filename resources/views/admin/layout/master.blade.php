@@ -48,7 +48,7 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2021 <div class="bullet"></div> Faris Ikhlasul H
+          Copyright &copy; 2021 <div class="bullet"></div> Kelompok 3
         </div>
         <div class="footer-right">
           TI - 2A

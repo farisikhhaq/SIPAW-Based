@@ -48,7 +48,7 @@
                           </div>
                       </div>
                     <div class="col-md-12 mt-5">
-                      <button href="" class="btn btn-warning btn-block mb-3 shadow text-light">Isi pengaduan</button>
+                      <button href="" class="btn btn-warning btn-block mb-3 shadow text-light">Kirim</button>
                     </div>
                   </form>
                   </div>
