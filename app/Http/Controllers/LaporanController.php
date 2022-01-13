@@ -75,8 +75,8 @@ class LaporanController extends Controller
         // menghitung total selesai
         $selesai = $totalselesai->count();
 
-        // menghitung masyarakat
-        $masyarakat = DB::table('tbl_mahasiswa')->count();
+        // menghitung mahasiswa
+        $mahasiswa = DB::table('tbl_mahasiswa')->count();
 
         // menghitung petugas
         $petugas = DB::table('tbl_petugas')->count();
@@ -90,7 +90,7 @@ class LaporanController extends Controller
             'terkirim'=>$terkirim,
             'proses'=>$proses,
             'selesai'=>$selesai,
-            'masyarakat'=>$masyarakat,
+            'mahasiswa'=>$mahasiswa,
             'petugas'=>$petugas,
             'ke'=>$ke,'dari'=>$dari
         ]);

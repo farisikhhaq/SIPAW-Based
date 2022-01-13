@@ -24,7 +24,7 @@
                 <h1 class="mb-1">Sistem Pengaduan Mahasiswa</h1>
                 <h3 class="mb-5"><em>Terjadi Fenomena di Sekitar Anda? Adukan Pada Kami!</em></h3>
                 <h3 class="mb-5"><em>Punya Aspirasi tapi tidak tau bagaimana menyalurkannya? Laporkan Pada Kami!</em></h3>
-                <a class="btn btn-primary btn-xl" href="/loginmasyarakat">Login</a><!-- ROUTE KE LOGIN-->
+                <a class="btn btn-primary btn-xl" href="/loginmahasiswa">Login</a><!-- ROUTE KE LOGIN-->
             </div>
         </header>
         <!-- About-->
@@ -146,8 +146,8 @@
         <section class="content-section bg-primary text-white">
             <div class="container px-4 px-lg-5 text-center">
                 <h2 class="mb-4">Jangan Takut Melaporkan!</h2>
-                @if (Auth::guard('masyarakat')->check())
-                <a href="masyarakat_pengaduan" class="btn btn-xl btn-light me-4">Isi Laporan</a>
+                @if (Auth::guard('mahasiswa')->check())
+                <a href="mahasiswa_pengaduan" class="btn btn-xl btn-light me-4">Isi Laporan</a>
                 &nbsp;
                 <a href="history" class="btn btn-xl btn-dark">Riwayat Laporan</a>
                 @else 
@@ -195,7 +195,7 @@
           })
           .then((willDelete) => {
             if (willDelete) {
-              window.location.href = "/loginmasyarakat";
+              window.location.href = "/loginmahasiswa";
             } else {
             swal('Oke!');
             }

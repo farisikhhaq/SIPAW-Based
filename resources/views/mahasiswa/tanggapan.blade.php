@@ -1,4 +1,4 @@
-@extends('masyarakat/layout/master')
+@extends('mahasiswa/layout/master')
 
 @section('content')
     <!-- content -->

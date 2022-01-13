@@ -13,16 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('loginmasyarakat', function () {
+Route::get('loginmahasiswa', function () {
     return view('welcome'); 
-})->name('login.masyarakat');
+})->name('login.mahasiswa');
 
 Route::get('login', 'LoginController@getLogin')->name('login');
 Route::post('proseslogin','LoginController@postLogin');
 Route::get('logout','LoginController@logout');
-Route::get('logoutmasyarakat','LoginController@logoutmasyarakat');
+Route::get('logoutmahasiswa','LoginController@logoutmahasiswa');
 Route::view('register', 'register');
-Route::post('regis', 'MasyarakatController@regis')->name('register');
+Route::post('regis', 'MahasiswaController@regis')->name('register');
 
 Route::group(['middleware'=>'auth:admin'], function(){
     Route::get('dashboard','DashboardController@index');
@@ -30,8 +30,8 @@ Route::group(['middleware'=>'auth:admin'], function(){
     // Petugas
     Route::resource('petugas', 'PetugasController');
 
-    // Masyarakat
-    Route::resource('masyarakat', 'MasyarakatController');
+    // Mahasiswa
+    Route::resource('mahasiswa', 'MahasiswaController');
 
     // Pengaduan
     Route::get('pengaduan','PengaduanController@index');
@@ -60,11 +60,11 @@ Route::group(['middleware'=>'auth:admin'], function(){
 });
 
 
-Route::get('/','MasyarakatController@depan');
+Route::get('/','MahasiswaController@depan');
 
-Route::group(['middleware'=>'auth:masyarakat'], function(){
-    Route::get('masyarakat_pengaduan','MasyarakatController@pengaduan');
-    Route::post('prosespengaduan','MasyarakatController@prosespengaduan');
-    Route::get('history','MasyarakatController@history');
-    Route::get('lihattanggapan/{id}','MasyarakatController@tanggapan')->name('tanggapans');
+Route::group(['middleware'=>'auth:mahasiswa'], function(){
+    Route::get('mahasiswa_pengaduan','MahasiswaController@pengaduan');
+    Route::post('prosespengaduan','MahasiswaController@prosespengaduan');
+    Route::get('history','MahasiswaController@history');
+    Route::get('lihattanggapan/{id}','MahasiswaController@tanggapan')->name('tanggapans');
 });

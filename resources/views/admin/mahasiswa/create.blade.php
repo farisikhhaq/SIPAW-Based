@@ -2,7 +2,7 @@
 
 @section('title','mahasiswa')
 @section('title2','tambah')
-@section('masyarakat','active')
+@section('mahasiswa','active')
 @section('konten')
 
 <div class="card">
@@ -10,7 +10,7 @@
     <h4>Tambah mahasiswa</h4>
   </div>
   <div class="card-body">
-    <form action="{{ route('masyarakat.store') }}" method="POST">
+    <form action="{{ route('mahasiswa.store') }}" method="POST">
     @csrf
     <div class="row">
 

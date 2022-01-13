@@ -20,8 +20,8 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard('admin')->check()) {
             return redirect('/admin');
-        } elseif (Auth::guard('masyarakat')->check()) {
-            return redirect('/masyarakat');
+        } elseif (Auth::guard('mahasiswa')->check()) {
+            return redirect('/mahasiswa');
         }
 
         return $next($request);

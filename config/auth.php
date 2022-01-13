@@ -58,14 +58,14 @@ return [
             'hash' => false,
         ],
 
-        'masyarakat' => [
+        'mahasiswa' => [
             'driver' => 'session',
-            'provider' => 'masyarakat',
+            'provider' => 'mahasiswa',
         ],
 
-        'masyarakat-api' => [
+        'mahasiswa-api' => [
             'driver' => 'token',
-            'provider' => 'masyarakat',
+            'provider' => 'mahasiswa',
             'hash' => false,
         ],
     ],
@@ -98,9 +98,9 @@ return [
             'model' => App\Models\admin::class,
         ],
 
-        'masyarakat' => [
+        'mahasiswa' => [
             'driver' => 'eloquent',
-            'model' => App\Models\masyarakat::class,
+            'model' => App\Models\mahasiswa::class,
         ],
 
         // 'users' => [

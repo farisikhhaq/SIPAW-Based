@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
-class MasyarakatController extends Controller
+class MahasiswaController extends Controller
 {
 
     private function _validation(Request $request)
@@ -41,7 +41,7 @@ class MasyarakatController extends Controller
         ->orWhere('nama','like',"%{$request->keyword}%")
         ->orWhere('username','like',"%{$request->keyword}%")
         ->paginate(5);
-        return view('admin/masyarakat.index',['data'=>$data]);
+        return view('admin/mahasiswa.index',['data'=>$data]);
     }
 
     /**
@@ -51,7 +51,7 @@ class MasyarakatController extends Controller
      */
     public function create()
     {
-        return view('admin/masyarakat.create');
+        return view('admin/mahasiswa.create');
     }
 
     /**
@@ -71,7 +71,7 @@ class MasyarakatController extends Controller
             'password'=>bcrypt($password),
             'telp'=>$request->telp
         ]);
-        return redirect('masyarakat')->with('message','Berhasil ditambahkan');
+        return redirect('mahasiswa')->with('message','Berhasil ditambahkan');
     }
 
     /**
@@ -94,7 +94,7 @@ class MasyarakatController extends Controller
     public function edit($id)
     {
         $data = DB::table('tbl_mahasiswa')->where('nik',$id)->first();
-        return view('admin/masyarakat.edit',['data'=>$data]);
+        return view('admin/mahasiswa.edit',['data'=>$data]);
     }
 
     /**
@@ -115,7 +115,7 @@ class MasyarakatController extends Controller
             'password'=>bcrypt($password),
             'telp'=>$request->telp
         ]);
-        return redirect('masyarakat')->with('message','Berhasil diubah');
+        return redirect('mahasiswa')->with('message','Berhasil diubah');
     }
 
     /**
@@ -132,7 +132,7 @@ class MasyarakatController extends Controller
 
     public function depan()
     {
-        return view('masyarakat.index');
+        return view('mahasiswa.index');
     }
 
     public function regis(Request $request)
@@ -146,12 +146,12 @@ class MasyarakatController extends Controller
             'password'=>bcrypt($password),
             'telp'=>$request->telp
         ]);
-        return redirect('loginmasyarakat')->with('message','Register berhasil ditambahkan');
+        return redirect('loginmahasiswa')->with('message','Register berhasil ditambahkan');
     }
 
     public function pengaduan()
     {
-        return view('masyarakat.pengaduan');
+        return view('mahasiswa.pengaduan');
     }
 
     public function prosespengaduan(Request $request)
@@ -170,7 +170,7 @@ class MasyarakatController extends Controller
         $tanggal = date('Y-m-d');
         DB::table('tbl_pengaduan')->insert([
             'tanggal_pengaduan'=>$tanggal,
-            'nik_id'=>Auth::guard('masyarakat')->user()->nik,
+            'nik_id'=>Auth::guard('mahasiswa')->user()->nik,
             'isi_laporan'=>$request->isi,
             'status'=>'terkirim',
             'foto'=>$nama_gambar_masakan
@@ -179,7 +179,7 @@ class MasyarakatController extends Controller
             $tanggal = date('Y-m-d');
             DB::table('tbl_pengaduan')->insert([
                 'tanggal_pengaduan'=>$tanggal,
-                'nik_id'=>Auth::guard('masyarakat')->user()->nik,
+                'nik_id'=>Auth::guard('mahasiswa')->user()->nik,
                 'isi_laporan'=>$request->isi,
                 'status'=>'terkirim'
             ]);
@@ -191,13 +191,13 @@ class MasyarakatController extends Controller
 
     public function history()
     {
-        $data = DB::table('tbl_pengaduan')->where('nik_id',Auth::guard('masyarakat')->user()->nik)->get();
-        return view('masyarakat.history',['data'=>$data]);
+        $data = DB::table('tbl_pengaduan')->where('nik_id',Auth::guard('mahasiswa')->user()->nik)->get();
+        return view('mahasiswa.history',['data'=>$data]);
     }
 
     public function tanggapan($id)
     {
         $data = DB::table('tbl_tanggapan')->where('pengaduan_id',$id)->first();
-        return view('masyarakat.tanggapan',['data'=>$data]);
+        return view('mahasiswa.tanggapan',['data'=>$data]);
     }
 }

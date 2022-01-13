@@ -25,9 +25,9 @@ class LoginController extends Controller
       if (Auth::guard('admin')->attempt(['username' => $request->username, 'password' => $request->password])) {
           // if successful, then redirect to their intended location
         return redirect()->intended('dashboard');
-      } elseif (Auth::guard('masyarakat')->attempt(['username' => $request->username, 'password' => $request->password])) {
+      } elseif (Auth::guard('mahasiswa')->attempt(['username' => $request->username, 'password' => $request->password])) {
         // if successful, then redirect to their intended location
-      return redirect()->intended('masyarakat_pengaduan');
+      return redirect()->intended('mahasiswa_pengaduan');
     } else {
         return redirect('/login')->with('message','username atau password salah');
       }
@@ -44,13 +44,13 @@ class LoginController extends Controller
   
     }
 
-    public function logoutmasyarakat()
+    public function logoutmahasiswa()
     {
-      if (Auth::guard('masyarakat')->check()) {
-        Auth::guard('masyarakat')->logout();
+      if (Auth::guard('mahasiswa')->check()) {
+        Auth::guard('mahasiswa')->logout();
       } 
   
-      return redirect('/loginmasyarakat');
+      return redirect('/loginmahasiswa');
   
     }
 }

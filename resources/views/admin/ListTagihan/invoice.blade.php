@@ -10,13 +10,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <!-- JAVASCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    <title>Pengaduan Masyarakat - PRINT</title>
+    <title>Pengaduan Mahasiswa - PRINT</title>
 </head>
 
 <body>
     <div class="row">
         <div class="col-12" style="height: 80px; background-color: #444444">
-            <h5 class="text-light text-center mt-4">Pengaduan Masyarakat Skrip Transaski</h5>
+            <h5 class="text-light text-center mt-4">Pengaduan Mahasiswa Skrip Transaski</h5>
         </div>
         <div class="col-12 text-center mt-2">
             <h3>INVOICE</h3><hr>

@@ -33,7 +33,7 @@ class admin extends Authenticatable
         'password', 
     ];
 
-    public function masyarakat(){
-        return $this->hasMany(masyarakat::class);
+    public function mahasiswa(){
+        return $this->hasMany(mahasiswa::class);
     }
 }

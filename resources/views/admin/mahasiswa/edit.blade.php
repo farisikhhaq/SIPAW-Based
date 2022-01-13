@@ -2,7 +2,7 @@
 
 @section('title','mahasiswa')
 @section('title2','tambah')
-@section('masyarakat','active')
+@section('mahasiswa','active')
 @section('konten')
 
 <div class="card">
@@ -10,7 +10,7 @@
     <h4>Edit Mahasiswa</h4>
   </div>
   <div class="card-body">
-    <form action="{{ route('masyarakat.update',$data->nik) }}" method="POST">
+    <form action="{{ route('mahasiswa.update',$data->nik) }}" method="POST">
         @method('PATCH')
     @csrf
     <div class="row">
@@ -38,7 +38,7 @@
         <div class="col-md-6">
             <div class="form-group">
               <label @error('nama') class="text-danger" @enderror>
-                nama masyarakat
+                nama mahasiswa
                 @error('nama')
                   | {{ $message }}
                 @enderror
@@ -115,7 +115,7 @@
     </div>    
       <div class="card-footer text-right">
         <button class="btn btn-primary mr-1" type="submit">Submit</button>
-        <a href="/masyarakat" class="btn btn-secondary" type="reset">Cancel</a>
+        <a href="/mahasiswa" class="btn btn-secondary" type="reset">Cancel</a>
       </div>
     </form>
   </div>
